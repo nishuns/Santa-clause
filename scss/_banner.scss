@@ -1,0 +1,14 @@
+.banner {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 6rem;
+  text-transform: uppercase;
+
+  &__primary {
+    font-size: inherit;
+    color: $color-primary;
+  }
+}

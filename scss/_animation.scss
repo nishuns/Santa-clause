@@ -1,0 +1,27 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: visible;
+  }
+
+  5% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
