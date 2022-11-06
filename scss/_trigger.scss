@@ -44,10 +44,10 @@
     }
 
     span {
-      &::before {
-        content: 'Play The Song';
-        text-transform: uppercase;
-      }
+      // &::before {
+      //   content: 'Play The Song';
+      // }
+      text-transform: uppercase;
     }
   }
 }

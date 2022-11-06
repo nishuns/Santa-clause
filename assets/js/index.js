@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const snow = getElement('snow');
   const trigger = getElement('trigger');
   const jingle = getElement('jingle');
+
+  jingle.volume = 0.2;
+  // jingle.autoplay;
+
   var myTimeline = anime.timeline({
     duration: 1000,
   });
@@ -21,15 +25,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }).add({
       targets: '.forest__bottom',
       height: '30vh',
-    }).add({
+    })
+    .add({
+      targets: '.santa',
+      translateX: '-90vw',
+      easing: 'spring(10, 10, 90, 0)',
+    })
+    .add({
+      targets: '.santa',
+      scaleX: '-1',
+      easing: 'spring(1, 80, 90, 0)'
+    })
+    .add({
+      targets: '.santa',
+      translateX: '0',
+      easing: 'spring(10, 10, 90, 0)'
+    })
+    .add({
+      targets: '.santa',
+      scaleX: '1',
+      easing: 'spring(1, 80, 90, 0)'
+    })
+    .add({
       targets: '.forest__bottom',
       height: '10vh',
     })
     .add({
       targets: '.forest__top',
-      opacity: 1,
-      translateY: '0'
-    }).add({
+      translateY: '0',
+      easing: 'spring(1, 80, 90, 0)'
+    })
+    .add({
       targets: '.trigger',
       opacity: 1
     }).add({
@@ -38,14 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
   trigger.onclick = () => {
-    toggleSnowFall(snow)
-    jingle.volume = 0.2;
-    if (jingle.paused) {
+    toggleSnowFall(snow);
+    setTimeout(() => {
+      toggleSnowFall(snow);
       jingle.play();
-    } else {
-      jingle.pause();
-    }
-    myTimeline.restart();
+      jingle.currentTime = 0
+      myTimeline.restart();
+    }, 500);
   }
 
 })
