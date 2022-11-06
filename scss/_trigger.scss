@@ -1,6 +1,6 @@
 .trigger {
   position: fixed;
-  top: 70%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -8,14 +8,70 @@
     text-transform: uppercase;
     font-family: inherit;
     padding: 15px 40px;
-    // font-weight: 600;
-    background-color: rgb(223, 222, 222);
+    font-weight: 600;
+    background-color: $color-white;
     color: $color-primary;
     cursor: pointer;
-    
+    border-radius: 4rem;
+    position: relative;
+
+    & i {
+      font-weight: 600;
+    }
+
+    &:hover {
+      &::before {
+        animation: scaleToDisappear 300ms 1 ease-in-out forwards;
+      }
+    }
+
+    &::before {
+      transition: all 300ms ease-in-out;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      position: absolute;
+      background: inherit;
+      border-radius: inherit;
+    }
+
     &:link,
     &:visited {
       text-transform: uppercase;
     }
+
+    span {
+      &::before {
+        content: 'Play The Song';
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@keyframes scaleToDisappear {
+  0% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes goToSide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(200vw);
   }
 }

@@ -1,9 +1,11 @@
 @keyframes fadeOut {
   0% {
+    visibility: visible;
     opacity: 1;
   }
 
   95% {
+    visibility: visible;
     opacity: 0;
   }
 
@@ -14,14 +16,16 @@
 
 @keyframes fadeIn {
   0% {
-    visibility: visible;
+    visibility: hidden;
   }
 
   5% {
+    visibility: visible;
     opacity: 0;
   }
 
   100% {
+    visibility: visible;
     opacity: 1;
   }
 }

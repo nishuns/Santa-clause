@@ -1,14 +1,25 @@
 .banner {
   position: fixed;
-  top: 40%;
+  // width: 200px;
+  // height: 200px;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
   text-transform: uppercase;
+  color: $color-white;
+  // background: url('../images/MerryChristmas-white.png');
+  // background-size: contain;
+  // background-repeat: no-repeat;
 
   &__primary {
-    font-size: inherit;
-    color: $color-primary;
+    // font-size: inherit;
+    box-shadow: 0 0 4px $color-primary;
+    line-height: 0;
+  }
+
+  &__secondary {
+    padding-top: 1rem;
   }
 }

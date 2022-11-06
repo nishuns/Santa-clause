@@ -1,0 +1,29 @@
+.forest {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  &__top {
+    width: inherit;
+    // animation: comeUp 400ms ease forwards;
+  }
+  
+  &__bottom {
+    width: inherit;
+    height: 10vh;
+    background: #fff;
+  }
+
+  &__img {
+    width: 100%;
+    transform: translateY(7vh);
+  }
+}
+
+// @keyframes comeUp {
+//   0% {
+//     transform: translate(3vw, 50vh);
+//   } 
+
+// }
